@@ -1,5 +1,29 @@
 $(document).ready(function () {
+    $('#fonixForm').submit(function () {
+        return false;
+    });
 
+    $('#mentes').click(function () {
+        $('#load').removeAttr('hidden');
+        $('#mentes').attr('hidden', 'hidden');
+        var datas = $("#fonixForm").serializeArray();
+        var munkalapok = [];
+        if(datas == null || datas == ''){
+            alert('Nem jelöltél ki')
+        }else{
+            jQuery.each(datas, function (i, data) {
+                munkalapok.push(data.value);
+            });
+            munkalapok = JSON.stringify(munkalapok);
+            $.post('', {
+                'munkalapok': munkalapok,
+            }) .done (function () {
+                $('#mentes').removeAttr('hidden');
+                $('#load').attr('hidden', 'hidden');
+                location.reload();
+            })
+        }
+    })
 });
 
 function osszesToggle(event) {

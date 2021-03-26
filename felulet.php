@@ -34,7 +34,7 @@ foreach ($szallitok as $szallito) {
                 <td class='border-info text-info text-center p-1'></td>
                 <td class='border-info text-info text-center p-1'></td>
                 <td class='border-info text-info text-center align-middle p-1'>" . $tetelekSzama . "</td>
-                <td class='border-info text-info text-center align-middle p-2' colspan='1'><input type='checkbox' name='szallitok' id='" . $szallito["adat"] . "' value='" . $szallito["adat"] . "'  onclick='munkalapToggle(this, $alTablaAzonosito)'></td>
+                <td class='border-info text-info text-center align-middle p-2' colspan='1'><input type='checkbox'  id='" . $szallito["adat"] . "' value='" . $szallito["adat"] . "'  onclick='munkalapToggle(this, $alTablaAzonosito)'></td>
                 <td class='border-info text-info text-center align-middle p-0' colspan='1'><input class='btn btn-outline-info btn-light align-middle py-0' type='button' name='lenyitasSZallito' id='lenyitasSzallito' value='Szállító lenyitása' onclick='szallitoLenyit($alTablaAzonosito)'></td>
     </tr>
     <tr hidden class='thead-light altabla  ".$alTablaAzonosito."'>
