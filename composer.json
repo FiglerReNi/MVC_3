@@ -1,0 +1,10 @@
+{
+  "description":"",
+  "name":"vendor/mainproject",
+  "autoload": {
+    "psr-4": { "": "src" }
+  },
+  "require": {
+    "twig/twig" :"^3.0"
+  }
+}
