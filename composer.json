@@ -5,6 +5,7 @@
     "psr-4": { "": "src" }
   },
   "require": {
-    "twig/twig" :"^3.0"
+    "twig/twig" :"^3.0",
+    "ext-pdo": "*"
   }
 }
