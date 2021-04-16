@@ -2,6 +2,8 @@
 
 namespace controller;
 
+use core\twig\TwigConfigure;
+
 class IndexController
 {
     /**
@@ -9,11 +11,7 @@ class IndexController
      */
     public function __construct()
     {
-        echo 'Ez a főoldalunk';
+        echo TwigConfigure::getTwigEnvironmet()->render('index.twig');
     }
 
-    public function teszt()
-    {
-        echo 'ez a metódusunk';
-    }
 }

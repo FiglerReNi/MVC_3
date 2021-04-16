@@ -14,4 +14,8 @@ class TesztController
     {
         echo 'tesztünk';
     }
+
+    public function valami(){
+        echo 'valami';
+    }
 }

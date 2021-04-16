@@ -36,8 +36,9 @@ class Routing
 
     public function doController()
     {
-        if (file_exists(__DIR__ . '../../controller/' . str_replace('c', 'C', ucwords($this->url[0])) . '.php')) {
-            $this->currentController = ucwords($this->url[0]);
+        $path = '\controller\\' . str_replace('c', 'C', ucwords($this->url[0])) . '.php';
+        if (file_exists('src\controller\\' . str_replace('c', 'C', ucwords($this->url[0])) . '.php')) {
+            $this->currentController = '\controller\\' . str_replace('c', 'C', ucwords($this->url[0]));
             unset($this->url[0]);
         }
     }
