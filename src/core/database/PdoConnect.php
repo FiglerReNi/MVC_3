@@ -51,7 +51,7 @@ class PdoConnect
         $this->executeStatement($query, $sets, $items);
     }
 
-    public function select($query, $items)
+    public function select($query, $items = array())
     {
         $stmt = $this->executeStatement($query, $items);
         try {

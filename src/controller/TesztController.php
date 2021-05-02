@@ -15,7 +15,9 @@ class TesztController
         echo 'tesztünk';
     }
 
-    public function valami(){
-        echo 'valami';
+    public function valami($params){
+        foreach ($params as $param){
+            echo $param;
+        }
     }
 }

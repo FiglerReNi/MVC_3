@@ -6,10 +6,10 @@ namespace core\routing;
 
 class Routing
 {
-    protected $currentController = '\controller\IndexController';
-    protected $currentMethod = [];
-    protected $params = [];
-    protected $url = [];
+    private $currentController = '\controller\IndexController';
+    private $currentMethod = [];
+    private $params = [];
+    private $url = [];
 
     public function __construct()
     {
@@ -18,12 +18,13 @@ class Routing
             $this->doController();
         }
 
-        $this->currentController = new $this->currentController;
+        $this->currentController = new $this->currentController();
 
         if (isset($this->url[1])) {
             $this->doMethod();
             $this->doParams();
-            call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
+            if(!empty($this->currentMethod))
+                call_user_func_array([$this->currentController, $this->currentMethod], array($this->params));
         }
     }
 
@@ -37,8 +38,8 @@ class Routing
     public function doController()
     {
         $path = '\controller\\' . str_replace('c', 'C', ucwords($this->url[0])) . '.php';
-        if (file_exists('src\controller\\' . str_replace('c', 'C', ucwords($this->url[0])) . '.php')) {
-            $this->currentController = '\controller\\' . str_replace('c', 'C', ucwords($this->url[0]));
+        if (file_exists('src' . $path)) {
+            $this->currentController = rtrim($path, '.php');
             unset($this->url[0]);
         }
     }
@@ -53,6 +54,7 @@ class Routing
 
     public function doParams()
     {
-        $this->params = $this->url ? array_values($this->url) : [];
+        $this->params = $this->url ? $this->url : [];
     }
 }
+

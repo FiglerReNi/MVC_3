@@ -14,4 +14,9 @@ class IndexController
         echo TwigConfigure::getTwigEnvironmet()->render('index.twig');
     }
 
+    public function teszt(){
+        echo "teszt";
+    }
+    
+
 }
