@@ -8,7 +8,7 @@ use Twig\Loader\FilesystemLoader;
 
 class TwigConfigure
 {
-    public static function getTwigEnvironmet(): Environment
+    public static function getTwigEnvironment(): Environment
     {
         $loader = new FilesystemLoader(TWIGPATH);
         $twig = new Environment($loader);

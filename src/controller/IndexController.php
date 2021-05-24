@@ -11,7 +11,7 @@ class IndexController
      */
     public function __construct()
     {
-        echo TwigConfigure::getTwigEnvironmet()->render('index.twig');
+        echo TwigConfigure::getTwigEnvironment()->render('index.twig');
     }
 
     public function teszt(){
